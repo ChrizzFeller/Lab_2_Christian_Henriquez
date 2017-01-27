@@ -18,19 +18,48 @@ int main() {
 				if (f==c) {
 					matriz[f][c] = cont;
 					cont++;
-				} else if (c == f+1 && matriz[f+1][c+1] == NULL) {
-					matriz[f][] = cont;
+				} else if (c == f+1 && matriz[f+1][c+1] == 0) {
+					matriz[f][c] = cont;
 				}
 			}
 		}
 	} else if (resp == 2) {
-		int tam;
-		cout << "Ingrese el tamaño del arreglo.";
+		int tam, mayor = 0, menor = 0;
+		cout << "Ingrese el tamaño del arreglo.\n";
 		cin >> tam;
+		while (tam < 5) {
+			cout << "Numero invalido, ingreselo de nuevo.\n";
+			cin >> tam;
+		}
 		int arr[tam];
 		for (int i = 0; i < tam; i++) {
-		
+			cout << "Ingrese un numero.\n";
+			int resp;
+			cin >> resp;
+			arr[i] = resp;
+			if (resp > mayor) {
+				mayor = resp;
+			}
+			if (resp < menor) {
+				menor = resp;
+			}
 		}
+		int temp = 0;
+		for (int i = 0; i < tam; i++) {
+			for (int j = 0; j < tam; j++) {
+				if (arr[i] < arr[j]) {
+					temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		for (int i = 0; i < tam; i++) {
+			cout << "[ " << arr[i] << " ] ";
+		}
+		cout << "\n";
+		cout << "El numero mas grande es: " << mayor << "\n";
+		cout << "El numero mas pequeño es: " << menor << "\n";
 	} else {
 	
 	}
@@ -48,11 +77,4 @@ int menu() {
 }
 
 int recur(int f, int c, int n) {
-	if () {
-	
-	} else if () {
-	
-	} else {
-	
-	}
 }
