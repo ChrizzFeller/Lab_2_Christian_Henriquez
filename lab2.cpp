@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cmath>
+#include <math.h>
 
 using namespace std;
 
@@ -62,7 +62,7 @@ int main() {
 		cout << "El numero mas grande es: " << mayor << "\n";
 		cout << "El numero mas pequeño es: " << menor << "\n";
 	} else {
-		double lad1, lad2, lad3, s, area, A,B,Y;
+		double lad1, lad2, lad3, s, area, A = 0,B = 0,C = 0;
 		cout << "Ingrese el primer lado: \n";
 		cin >> lad1;
 		cout << "Ingrese el segundo lado: \n";
@@ -71,7 +71,22 @@ int main() {
 		cin >> lad3;
 		s = (lad1 + lad2 + lad3) / 2;
 		area = sqrt ((s)*(s-lad1)*(s-lad2)*(s-lad3));
-		
+		A = asin(((lad1 * lad1) - (lad2 * lad2)  - (lad3 * lad3)) / -2*(lad2)*(lad3));
+		B = acos((-1* (lad1 * lad1) + (lad2 * lad2) - (lad3 * lad3)) / -2*(lad1)*(lad3));
+		C = acos((-1* (lad1 * lad1) - (lad2 * lad2) + (lad3 * lad3)) / -2*(lad1)*(lad2));
+		bool boo = false;
+		if (A == 90 || B == 90 || C == 90) {
+			boo = true;
+		}
+		if (boo == true) {
+			cout << "El triangulo es rectangulo.\n";
+		} else {
+			cout << "El triangulo no es rectangulo.\n";
+		}
+		cout << "El area es de: " << area << "\n";
+		cout << "El angulo a es de: " << A << "\n";
+		cout << "El angulo b es de: " << B << "\n";
+		cout << "El angulo c es de: " << C << "\n";
 	}
 	return 0;
 }
