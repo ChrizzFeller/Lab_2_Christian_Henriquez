@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -61,7 +62,16 @@ int main() {
 		cout << "El numero mas grande es: " << mayor << "\n";
 		cout << "El numero mas pequeño es: " << menor << "\n";
 	} else {
-	
+		double lad1, lad2, lad3, s, area, A,B,Y;
+		cout << "Ingrese el primer lado: \n";
+		cin >> lad1;
+		cout << "Ingrese el segundo lado: \n";
+		cin >> lad2;
+		cout << "Ingrese el tercer lado: \n";
+		cin >> lad3;
+		s = (lad1 + lad2 + lad3) / 2;
+		area = sqrt ((s)*(s-lad1)*(s-lad2)*(s-lad3));
+		
 	}
 	return 0;
 }
