@@ -4,7 +4,6 @@
 using namespace std;
 
 int menu();
-int recur(int f, int c);
 
 int main() {
 	int resp = menu();
@@ -14,7 +13,7 @@ int main() {
 		cin >> x;
 		y = x + 1;
 		int matriz[x][y];
-		for(int f=0; f < x ; f++) {
+		/*for(int f=0; f < x ; f++) {
 			for(int c=0; c < y; c++) {
 				if (f==c) {
 					matriz[f][c] = cont;
@@ -23,6 +22,21 @@ int main() {
 					matriz[f][c] = cont;
 				}
 			}
+		}*/
+		for (int i = 0; i < x; i++) {
+			for(int j = 0; j < y; j++) {
+				cout << "[ " << i << "," << j << " ] ";
+				i++;
+				if (i == x) {
+					if(j != y) {
+						i = 0;
+					} else { 
+						break;
+						break;
+					}
+				}
+			}
+			cout << "\n";
 		}
 	} else if (resp == 2) {
 		int tam, mayor = 0, menor = 0;
@@ -99,7 +113,4 @@ int menu() {
 	int resp;
 	cin >> resp;
 	return resp;
-}
-
-int recur(int f, int c, int n) {
 }
