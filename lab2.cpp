@@ -3,6 +3,7 @@
 using namespace std;
 
 int menu();
+int recur(int f, int c);
 
 int main() {
 	int resp = menu();
@@ -12,20 +13,24 @@ int main() {
 		cin >> x;
 		y = x + 1;
 		int matriz[x][y];
-		for (int i=0; i < x*y ; i++) {
-			for(int f=0; f < x ; f++) {
-				for(int c=0; c < y; c++) {
-					if (f==c) {
-						matriz[f][c] = cont;
-						cont++;
-					} else if(f+1 != NULL || c+1 != NULL) {
-						
-					}
+		for(int f=0; f < x ; f++) {
+			for(int c=0; c < y; c++) {
+				if (f==c) {
+					matriz[f][c] = cont;
+					cont++;
+				} else if (c == f+1 && matriz[f+1][c+1] == NULL) {
+					matriz[f][] = cont;
 				}
 			}
 		}
 	} else if (resp == 2) {
-	
+		int tam;
+		cout << "Ingrese el tamaño del arreglo.";
+		cin >> tam;
+		int arr[tam];
+		for (int i = 0; i < tam; i++) {
+		
+		}
 	} else {
 	
 	}
@@ -40,4 +45,14 @@ int menu() {
 	int resp;
 	cin >> resp;
 	return resp;
+}
+
+int recur(int f, int c, int n) {
+	if () {
+	
+	} else if () {
+	
+	} else {
+	
+	}
 }
