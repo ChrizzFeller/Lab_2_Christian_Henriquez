@@ -8,7 +8,7 @@ int menu();
 int main() {
 	int resp = menu();
 	if (resp == 1) {
-		int x, y, cont = 1, f = 0, c = 0, cont1 = 0, cont2 = 0;
+		int x=0, y=0, cont = 1, f = 0, c = 0, cont1 = 0, cont2 = 0;
 		cout << "Ingrese el numero de filas: \n";
 		cin >> x;
 		y = x + 1;
@@ -16,23 +16,26 @@ int main() {
 		for (int i = 0; i < x * y; i++) {
 			if (f < x && c < y) {
 				mat[f][c] = cont;
+				//cout << "(" << f << "," << c << ") ";
 				cont++;
 				f++;
 				c++;
-			} else if (f == x && c < y) {
+			} else if (c < y && f == x) {
 				f == cont1;
 				mat[f][c] = cont;
+				//cout << "(" << f << "," << c << ") ";
 				cont++;
 				f++;
 				c++;
-				cont1++;
-			} else if (c == y) {
+				//cont1++;
+			} else if(f < x && c == y) { 
 				c == cont2;
 				mat[f][c] = cont;
+				//cout << "(" << f << "," << c << ") ";
 				cont++;
 				f++;
 				c++;
-				cont2++;
+				//cont2++;
 			}
 		}
 		for(int i=0; i < x ; i++) {
@@ -41,32 +44,6 @@ int main() {
                         }
 			cout << "\n";
                 }
-		/*for(int f=0; f < x ; f++) {
-			for(int c=0; c < y; c++) {
-				if (f==c) {
-					matriz[f][c] = cont;
-					cont++;
-				} else if (c == f+1 && matriz[f+1][c+1] == 0) {
-					matriz[f][c] = cont;
-				}
-			}
-		}*/
-		/*for (int i = 0; i < x; i++) {
-			for(int j = 0; j < y; j++) {
-				cout << "[ " << i << "," << j << " ] ";
-				i++;
-				if (i == x) {
-					if(j != y) {
-						i = 0;
-					} else { 
-						break;
-						break;
-					}
-				}
-			}
-			cout << "\n";
-		}
-		*/
 	} else if (resp == 2) {
 		int tam, mayor = 0, menor = 0;
 		cout << "Ingrese el tamaño del arreglo.\n";
