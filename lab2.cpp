@@ -8,34 +8,29 @@ int menu();
 int main() {
 	int resp = menu();
 	if (resp == 1) {
-		int x=0, y=0, cont = 1, f = 0, c = 0, cont1 = 0, cont2 = 0;
+		int x=0, y=0, cont = 1, f = 0, c = 0;
 		cout << "Ingrese el numero de filas: \n";
 		cin >> x;
 		y = x + 1;
 		int mat[x][y];
-		for (int i = 0; i < x * y; i++) {
+		for (int i = 0; i < (x * y); i++) {
 			if (f < x && c < y) {
 				mat[f][c] = cont;
-				//cout << "(" << f << "," << c << ") ";
 				cont++;
 				f++;
 				c++;
-			} else if (c < y && f == x) {
-				f == cont1;
+			} else if (f == x && c < y) {
+				f = 0;
 				mat[f][c] = cont;
-				//cout << "(" << f << "," << c << ") ";
 				cont++;
 				f++;
 				c++;
-				//cont1++;
-			} else if(f < x && c == y) { 
-				c == cont2;
+			} else if (c == y && f < x) { 
+				c = 0;
 				mat[f][c] = cont;
-				//cout << "(" << f << "," << c << ") ";
 				cont++;
 				f++;
 				c++;
-				//cont2++;
 			}
 		}
 		for(int i=0; i < x ; i++) {
